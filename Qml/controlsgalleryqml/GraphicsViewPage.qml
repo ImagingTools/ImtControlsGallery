@@ -452,6 +452,7 @@ GraphicsView{
 			view.deleteObjectFunc(view.selectedIndex);
         }
     }
+
 }
 
 

@@ -1,4 +1,7 @@
 <RCC>
+    <qresource prefix="/Images">
+        <file alias="testImage">Resources/Images/testImage.jpg</file>
+    </qresource>
     <qresource prefix="/qml">
         <file alias="ImtControlsGalleryMain.qml">ImtControlsGalleryMain.qml</file>
         <file alias="ImtControlsGalleryWeb.qml">ImtControlsGalleryWeb.qml</file>
