@@ -49,14 +49,12 @@
         <Element Id="CollectionHeadersProvider" PackageId="ImtColPck" ComponentId="CollectionHeadersProvider">
             <Data IsEnabled="true" Flags="0">
                 <AttributeInfoMap>
-                    <AttributeInfo Id="HeaderFilterable" Type="Boolean[]" ExportId="">
+                    <AttributeInfo Id="FilterableHeaderIds" Type="Id[]" ExportId="">
                         <Data IsEnabled="true">
                             <Values>
-                                <Value>true</Value>
-                                <Value>true</Value>
-                                <Value>true</Value>
-                                <Value>false</Value>
-                                <Value>false</Value>
+                                <Value>firstName</Value>
+                                <Value>lastName</Value>
+                                <Value>email</Value>
                             </Values>
                         </Data>
                     </AttributeInfo>
@@ -82,14 +80,14 @@
                             </Values>
                         </Data>
                     </AttributeInfo>
-                    <AttributeInfo Id="HeaderSortable" Type="Boolean[]" ExportId="">
+                    <AttributeInfo Id="SortableHeaderIds" Type="Id[]" ExportId="">
                         <Data IsEnabled="true">
                             <Values>
-                                <Value>true</Value>
-                                <Value>true</Value>
-                                <Value>true</Value>
-                                <Value>true</Value>
-                                <Value>true</Value>
+                                <Value>firstName</Value>
+                                <Value>lastName</Value>
+                                <Value>email</Value>
+                                <Value>added</Value>
+                                <Value>timeStamp</Value>
                             </Values>
                         </Data>
                     </AttributeInfo>
