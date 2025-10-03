@@ -1,0 +1,28 @@
+schema {
+	namespace: controlsgallery
+	version: 1.0
+
+	query: Query
+	mutation: Mutation
+}
+
+import {
+	"../../../../ImtCore/Sdl/imtbase/1.0/DocumentManager.sdl"
+	"../../../../ImtCore/Sdl/imtbase/1.0/UndoManager.sdl"
+}
+
+type Query {
+	GetOpenedDocumentList: DocumentList!
+	GetUndoInfo(input: DocumentId): UndoInfo!
+}
+
+type Mutation {
+	CreateNewDocument(input: DocumentTypeId): DocumentId!
+	OpenDocument(input: ObjectId): DocumentId!
+	SaveDocument(input: DocumentId): DocumentOperationStatus!
+	CloseDocument(input: DocumentId): DocumentOperationStatus!
+
+	DoUndo(input: UndoRedoInput): UndoStatus!
+	DoRedo(input: UndoRedoInput): UndoStatus!
+	ResetUndo(input: DocumentId): UndoStatus!
+}
