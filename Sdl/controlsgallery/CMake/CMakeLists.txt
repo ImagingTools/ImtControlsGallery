@@ -17,6 +17,3 @@ ImtCoreCustomConfigureSdlCppQml(CXX QML
 			SCHEMA_PATH	"${CMAKE_CURRENT_LIST_DIR}/../1.0/ContactInfoCollectionDocumentManager.sdl"
 			VERSION		"1.0")
 
-ImtCoreCustomConfigureSdlCppQml(CXX QML
-			SCHEMA_PATH	"${CMAKE_CURRENT_LIST_DIR}/../1.0/DocumentManager.sdl"
-			VERSION		"1.0")

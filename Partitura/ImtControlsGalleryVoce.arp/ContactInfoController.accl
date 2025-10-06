@@ -2,18 +2,21 @@
 <Acf>
     <AcfHeader>
         <VersionInfos>
-            <Version Id="0" Number="5423" Description="ACF"/>
-            <Version Id="1" Number="2252" Description="ACF-Solutions"/>
-            <Version Id="1023" Number="395264" Description="Qt Framework"/>
+            <Version Id="0" Number="5405" Description="ACF"/>
+            <Version Id="1" Number="2250" Description="ACF-Solutions"/>
+            <Version Id="1023" Number="395267" Description="Qt Framework"/>
         </VersionInfos>
     </AcfHeader>
     <PositionMap>
         <Element ComponentName="BaseCollectionCommands" X="225" Y="125" Note=""/>
         <Element ComponentName="BaseDocumentCommands" X="925" Y="125" Note=""/>
-        <Element ComponentName="CollectionHeadersProvider" X="575" Y="550" Note=""/>
-        <Element ComponentName="ContactInfo" X="200" Y="400" Note=""/>
-        <Element ComponentName="ContactInfoCollectionController" X="575" Y="375" Note=""/>
+        <Element ComponentName="CollectionDocumentManager" X="425" Y="550" Note=""/>
+        <Element ComponentName="CollectionHeadersProvider" X="1050" Y="375" Note=""/>
+        <Element ComponentName="ContactInfo" X="150" Y="375" Note=""/>
+        <Element ComponentName="ContactInfoCollectionController" X="700" Y="375" Note=""/>
+        <Element ComponentName="ContactInfoCollectionDocumentManager" X="300" Y="250" Note=""/>
         <Element ComponentName="Demultiplexer" X="575" Y="125" Note=""/>
+        <Element ComponentName="SerializedUndoManager" X="425" Y="650" Note=""/>
     </PositionMap>
     <EmbeddedRegistries/>
 </Acf>

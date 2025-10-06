@@ -24,6 +24,11 @@ I_EXPORT_COMPONENT(
 		"Contact info meta info delegate",
 		"ContactInfo Meta Info Delegate");
 
+I_EXPORT_COMPONENT(
+		ContactInfoCollectionDocumentManager,
+		"Contact info collection document manager",
+		"Contact Info Collection Document Manager");
+
 
 } // namespace ControlsGalleryGqlPck
 

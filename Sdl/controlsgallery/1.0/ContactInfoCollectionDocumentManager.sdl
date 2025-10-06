@@ -7,22 +7,20 @@ schema {
 }
 
 import {
-	"../../../../ImtCore/Sdl/imtbase/1.0/DocumentManager.sdl"
+	"ContactInfos.sdl"
+	"../../../../ImtCore/Sdl/imtbase/1.0/CollectionDocumentManager.sdl"
 	"../../../../ImtCore/Sdl/imtbase/1.0/UndoManager.sdl"
 }
 
+type UpdateContactInfoInput {
+	documentId: ID!
+	contactInfo: ContactInfoData!
+}
+
 type Query {
-	GetOpenedDocumentList: DocumentList!
-	GetUndoInfo(input: DocumentId): UndoInfo!
+	GetContactInfoRepresentation(input: DocumentId): ContactInfoData!
 }
 
 type Mutation {
-	CreateNewDocument(input: DocumentTypeId): DocumentId!
-	OpenDocument(input: ObjectId): DocumentId!
-	SaveDocument(input: DocumentId): DocumentOperationStatus!
-	CloseDocument(input: DocumentId): DocumentOperationStatus!
-
-	DoUndo(input: UndoRedoInput): UndoStatus!
-	DoRedo(input: UndoRedoInput): UndoStatus!
-	ResetUndo(input: DocumentId): UndoStatus!
+	UpdateContactInfoFromRepresentation(input: UpdateContactInfoInput): DocumentOperationStatus!
 }

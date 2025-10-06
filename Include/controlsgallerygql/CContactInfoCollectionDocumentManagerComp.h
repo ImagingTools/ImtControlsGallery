@@ -1,33 +1,40 @@
 #pragma once
 
 
-// Rosa includes
-#include <imtservergql/CollectionDocumentManagerDefs.h>
-#include <imtservergql/TCollectionDocumentManagerCompBase.h>
+// ImtCore includes
+#include <imtdoc/ICollectionDocumentManager.h>
+#include <imtbasesdl/SDL/1.0/CPP/CollectionDocumentManager.h>
+
+// ControlsGallery includes
 #include <controlsgallerysdl/SDL/1.0/CPP/ContactInfoCollectionDocumentManager.h>
 
-
-COLLECTION_DOCUMENT_MANAGER_DEFS(sdl::controlsgallery::ContactInfoCollectionDocumentManager, ContactInfoCollectionDocumentManager);
 
 
 namespace controlsgallerygql
 {
 
 
-class CColorCollectionDocumentManagerComp
-	: public imtservergql::TCollectionDocumentManagerCompBase<
-		sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGraphQlHandlerCompBase,
-		ContactInfoCollectionDocumentManager>
+class CContactInfoCollectionDocumentManagerComp: public sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGraphQlHandlerCompBase
 {
 public:
-	typedef TCollectionDocumentManagerCompBase<
-		sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGraphQlHandlerCompBase,
-		ContactInfoCollectionDocumentManager> BaseClass;
+	typedef sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGraphQlHandlerCompBase BaseClass;
 
-	I_BEGIN_COMPONENT(CColorCollectionDocumentManagerComp)
+	I_BEGIN_COMPONENT(CContactInfoCollectionDocumentManagerComp)
+		I_ASSIGN(m_documentManagerCompPtr, "CollectionDocumentManager", "Collection document manager", false, "CollectionDocumentManager");
 	I_END_COMPONENT
 
 protected:
+	virtual sdl::controlsgallery::ContactInfos::CContactInfoData OnGetContactInfoRepresentation(
+		const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGetContactInfoRepresentationGqlRequest& getContactInfoRepresentationRequest,
+		const ::imtgql::CGqlRequest& gqlRequest,
+		QString& errorMessage) const override;
+	virtual sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus OnUpdateContactInfoFromRepresentation(
+		const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CUpdateContactInfoFromRepresentationGqlRequest& updateContactInfoFromRepresentationRequest,
+		const ::imtgql::CGqlRequest& gqlRequest,
+		QString& errorMessage) const override;
+
+private:
+	I_REF(imtdoc::ICollectionDocumentManager, m_documentManagerCompPtr);
 };
 
 
