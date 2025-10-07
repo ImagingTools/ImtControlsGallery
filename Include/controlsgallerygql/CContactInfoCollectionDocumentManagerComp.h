@@ -25,13 +25,13 @@ public:
 
 protected:
 	virtual sdl::controlsgallery::ContactInfos::CContactInfoData OnGetContactInfoRepresentation(
-		const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGetContactInfoRepresentationGqlRequest& getContactInfoRepresentationRequest,
-		const ::imtgql::CGqlRequest& gqlRequest,
-		QString& errorMessage) const override;
+				const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGetContactInfoRepresentationGqlRequest& getContactInfoRepresentationRequest,
+				const ::imtgql::CGqlRequest& gqlRequest,
+				QString& errorMessage) const override;
 	virtual sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus OnUpdateContactInfoFromRepresentation(
-		const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CUpdateContactInfoFromRepresentationGqlRequest& updateContactInfoFromRepresentationRequest,
-		const ::imtgql::CGqlRequest& gqlRequest,
-		QString& errorMessage) const override;
+				const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CUpdateContactInfoFromRepresentationGqlRequest& updateContactInfoFromRepresentationRequest,
+				const ::imtgql::CGqlRequest& gqlRequest,
+				QString& errorMessage) const override;
 
 private:
 	I_REF(imtdoc::ICollectionDocumentManager, m_documentManagerCompPtr);
