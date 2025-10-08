@@ -73,7 +73,7 @@ RemoteCollectionView {
 							ContactInfoData {
 								onFinished: {
 									root.representationModel.copyFrom(this)
-									root.representationUpdated(root.documentId)
+									root.representationUpdated(root.documentId, root.representationModel)
 								}
 							}
 						}
