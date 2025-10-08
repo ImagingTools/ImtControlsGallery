@@ -3,18 +3,21 @@ import Acf 1.0
 import com.imtcore.imtqml 1.0
 import imtcontrols 1.0
 import imtgui 1.0
+import imtguigql 1.0
 import imtauthgui 1.0
 import imtdocgui 1.0
 import imtcolgui 1.0
 import controlsgalleryContactInfosSdl 1.0
+import controlsgalleryContactInfoCollectionDocumentManagerSdl 1.0
+import imtbaseCollectionDocumentManagerSdl 1.0
+import imtbaseUndoManagerSdl 1.0
 
 ViewBase {
 	id: root
 	
 	anchors.fill: parent
-	
-	property ContactInfoData contactInfoData: model ? model : null
 
+	property ContactInfoData contactInfoData: model
 	function updateGui(){
 		firstNameInput.text = contactInfoData.m_firstName
 		lastNameInput.text = contactInfoData.m_lastName

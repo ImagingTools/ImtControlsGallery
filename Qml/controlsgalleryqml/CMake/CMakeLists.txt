@@ -22,6 +22,9 @@ getImtCoreQmlWebDirs(webdirs "${buildwebdir}")
 list(APPEND webdirs ${AUX_INCLUDE_DIR}/controlsgallerysdl/SDL/1.0/QML/controlsgalleryContactInfosSdl)
 list(APPEND webdirs ${buildwebdir}/src/controlsgalleryContactInfosSdl)
 
+list(APPEND webdirs ${AUX_INCLUDE_DIR}/controlsgallerysdl/SDL/1.0/QML/controlsgalleryContactInfoCollectionDocumentManagerSdl)
+list(APPEND webdirs ${buildwebdir}/src/controlsgalleryContactInfoCollectionDocumentManagerSdl)
+
 if(DEFINED WEB_COMPILE AND WEB_COMPILE)
 	add_compile_definitions(WEB_COMPILE)
 	set(resname "controlsgallery")

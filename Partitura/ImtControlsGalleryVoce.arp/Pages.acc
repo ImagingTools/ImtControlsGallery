@@ -64,17 +64,17 @@
                 </AttributeInfoMap>
             </Data>
         </Element>
-        <Element Id="CollectionPage" PackageId="ImtCoreVoce" ComponentId="MultiDocPage">
+        <Element Id="CollectionPage" PackageId="ImtGraphQlVoce" ComponentId="MultiDocumentGqlCollectionPage">
             <Data IsEnabled="true" Flags="0">
                 <AttributeInfoMap>
                     <AttributeInfo Id="Alignment" Type="Integer" ExportId="">
                         <Data IsEnabled="true" Value="32"/>
                     </AttributeInfo>
-                    <AttributeInfo Id="FixedItemQmlPath" Type="Text" ExportId="">
+                    <AttributeInfo Id="CollectionViewQmlPath" Type="Text" ExportId="">
                         <Data IsEnabled="true" Value="qrc:/qml/ContactInfoCollectionView.qml"/>
                     </AttributeInfo>
                     <AttributeInfo Id="IconPath" Type="Text" ExportId="">
-                        <Data IsEnabled="true" Value="Icons/Product"/>
+                        <Data IsEnabled="true" Value="Icons/Account"/>
                     </AttributeInfo>
                     <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
                         <Data IsEnabled="false"/>
@@ -187,7 +187,7 @@
                     <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
                         <Data IsEnabled="false"/>
                     </AttributeInfo>
-                    <AttributeInfo Id="Name" Type="String" ExportId="">
+                    <AttributeInfo Id="Name" Type="Text" ExportId="">
                         <Data IsEnabled="true" Value="GridView"/>
                     </AttributeInfo>
                     <AttributeInfo Id="PageId" Type="Id" ExportId="">
