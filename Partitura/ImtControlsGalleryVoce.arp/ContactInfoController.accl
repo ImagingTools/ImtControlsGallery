@@ -11,6 +11,7 @@
         <Element ComponentName="BaseCollectionCommands" X="225" Y="125" Note=""/>
         <Element ComponentName="BaseDocumentCommands" X="925" Y="125" Note=""/>
         <Element ComponentName="CollectionDocumentManager" X="425" Y="550" Note=""/>
+        <Element ComponentName="CollectionDocumentManagerPublisher" X="800" Y="550" Note=""/>
         <Element ComponentName="CollectionHeadersProvider" X="1050" Y="375" Note=""/>
         <Element ComponentName="ContactInfo" X="150" Y="375" Note=""/>
         <Element ComponentName="ContactInfoCollectionController" X="700" Y="375" Note=""/>
