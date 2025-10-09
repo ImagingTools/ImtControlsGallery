@@ -49,7 +49,7 @@ RemoteCollectionView {
 			Component {
 				id: contactInfoDataControllerFactory
 
-				DocumentDataController {
+				DocumentRepresentationController {
 					id: root
 				
 					representationModel: ContactInfoData {}
