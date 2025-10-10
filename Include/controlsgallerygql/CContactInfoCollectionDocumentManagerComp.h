@@ -32,6 +32,14 @@ protected:
 				const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CUpdateContactInfoFromRepresentationGqlRequest& updateContactInfoFromRepresentationRequest,
 				const ::imtgql::CGqlRequest& gqlRequest,
 				QString& errorMessage) const override;
+	virtual sdl::controlsgallery::ContactInfoCollectionDocumentManager::CEmailData OnGetContactInfoEmailRepresentation(
+				const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CGetContactInfoEmailRepresentationGqlRequest& getContactInfoEmailRepresentationRequest,
+				const ::imtgql::CGqlRequest& gqlRequest,
+				QString& errorMessage) const override;
+	virtual sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus OnUpdateContactInfoEmailFromRepresentation(
+				const sdl::controlsgallery::ContactInfoCollectionDocumentManager::CUpdateContactInfoEmailFromRepresentationGqlRequest& updateContactInfoEmailFromRepresentationRequest,
+				const ::imtgql::CGqlRequest& gqlRequest,
+				QString& errorMessage) const override;
 
 private:
 	I_REF(imtdoc::ICollectionDocumentManager, m_documentManagerCompPtr);
