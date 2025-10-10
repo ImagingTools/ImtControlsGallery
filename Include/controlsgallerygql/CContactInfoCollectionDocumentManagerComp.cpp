@@ -1,6 +1,9 @@
 #include <controlsgallerygql/CContactInfoCollectionDocumentManagerComp.h>
 
 
+// ACF includes
+#include <istd/CChangeGroup.h>
+
 // ImtCore includes
 #include <imtbase/IObjectCollectionIterator.h>
 #include <imtauth/IContactInfo.h>
@@ -88,6 +91,8 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
 	}
+
+	istd::CChangeGroup changeGroup(contactInfoPtr);
 
 	if (contactInfo.firstName){
 		contactInfoPtr->SetNameField(imtauth::IContactInfo::NFT_FIRST_NAME, *contactInfo.firstName);
