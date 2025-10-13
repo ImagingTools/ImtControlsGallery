@@ -32,7 +32,7 @@ sdl::controlsgallery::ContactInfos::CContactInfoData CContactInfoCollectionDocum
 	istd::IChangeable* documentPtr = nullptr;
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
-		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId);
+		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId).GetPtr();
 	}
 
 	if (documentPtr == nullptr){
@@ -80,7 +80,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		contactInfo = *arguments.input.Version_1_0->contactInfo;
 	}
 
-	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId);
+	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId).GetPtr();
 	if (documentPtr == nullptr){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
@@ -128,7 +128,7 @@ sdl::controlsgallery::ContactInfoCollectionDocumentManager::CEmailData CContactI
 	istd::IChangeable* documentPtr = nullptr;
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
-		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId);
+		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId).GetPtr();
 	}
 
 	if (documentPtr == nullptr){
@@ -172,7 +172,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		emailInfo = *arguments.input.Version_1_0->email;
 	}
 
-	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId);
+	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId).GetPtr();
 	if (documentPtr == nullptr){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
