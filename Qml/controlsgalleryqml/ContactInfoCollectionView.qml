@@ -23,12 +23,17 @@ RemoteCollectionView {
 
 	commandsDelegateComp: Component {
 		DocCollectionViewDelegate {
-			documentTypeIds: ["ContactInfo", "ContactInfo"]
-			documentTypeNames: ["Contact Info", "Contact Info"]
-			documentViewTypeIds: ["ContactInfoEditor", "ContactEmailEditor"]
-			documentEditorsComp: [contactInfoEditorComp, emailContactInfoEditorComp]
-			documentDataControllersComp: [contactInfoDataControllerFactory, contactInfoEmailDataControllerFactory]
 			collectionView: container
+
+			Component.onCompleted: {
+				registerDocumentType("ContactInfo", qsTr("Contact Info"))
+				addDocumentView("ContactInfo", "ContactInfoEditor", contactInfoEditorComp, contactInfoDataControllerFactory)
+				addDocumentView("ContactInfo", "ContactEmailEditor", emailContactInfoEditorComp, contactInfoEmailDataControllerFactory)
+
+				registerDocumentType("ContactInfo2", qsTr("Contact Info 2"))
+				addDocumentView("ContactInfo2", "ContactInfoEditor", contactInfoEditorComp, contactInfoDataControllerFactory)
+				addDocumentView("ContactInfo2", "ContactEmailEditor", emailContactInfoEditorComp, contactInfoEmailDataControllerFactory)
+			}
 
 			Component {
 				id: contactInfoEditorComp
