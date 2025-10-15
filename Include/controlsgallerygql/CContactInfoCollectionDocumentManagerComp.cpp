@@ -29,17 +29,18 @@ sdl::controlsgallery::ContactInfos::CContactInfoData CContactInfoCollectionDocum
 	}
 
 	QByteArray objectId;
-	istd::IChangeable* documentPtr = nullptr;
+	istd::IChangeableSharedPtr documentPtr;
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
-		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId).GetPtr();
+
+		m_documentManagerCompPtr->GetDocumentData("Test", objectId, documentPtr);
 	}
 
-	if (documentPtr == nullptr){
+	if (!documentPtr.IsValid()){
 		return sdl::controlsgallery::ContactInfos::CContactInfoData();
 	}
 
-	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr);
+	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr.GetPtr());
 	if (contactInfoPtr == nullptr){
 		return sdl::controlsgallery::ContactInfos::CContactInfoData();
 	}
@@ -80,13 +81,14 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		contactInfo = *arguments.input.Version_1_0->contactInfo;
 	}
 
-	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId).GetPtr();
-	if (documentPtr == nullptr){
+	istd::IChangeableSharedPtr documentPtr;
+	m_documentManagerCompPtr->GetDocumentData("Test", documentId, documentPtr);
+	if (!documentPtr.IsValid()){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
 	}
 
-	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr);
+	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr.GetPtr());
 	if (contactInfoPtr == nullptr){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
@@ -105,6 +107,8 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 	if (contactInfo.email){
 		contactInfoPtr->SetEmail(*contactInfo.email);
 	}
+
+	m_documentManagerCompPtr->SetDocumentData("Test", documentId, *contactInfoPtr);
 
 	response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::Success;
 
@@ -125,17 +129,17 @@ sdl::controlsgallery::ContactInfoCollectionDocumentManager::CEmailData CContactI
 	}
 
 	QByteArray objectId;
-	istd::IChangeable* documentPtr = nullptr;
+	istd::IChangeableSharedPtr documentPtr;
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
-		documentPtr = m_documentManagerCompPtr->GetDocument("Test", objectId).GetPtr();
+		m_documentManagerCompPtr->GetDocumentData("Test", objectId, documentPtr);
 	}
 
-	if (documentPtr == nullptr){
+	if (!documentPtr.IsValid()){
 		return response;
 	}
 
-	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr);
+	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr.GetPtr());
 	if (contactInfoPtr == nullptr){
 		return response;
 	}
@@ -172,13 +176,14 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		emailInfo = *arguments.input.Version_1_0->email;
 	}
 
-	istd::IChangeable* documentPtr = m_documentManagerCompPtr->GetDocument("Test", documentId).GetPtr();
-	if (documentPtr == nullptr){
+	istd::IChangeableSharedPtr documentPtr;
+	m_documentManagerCompPtr->GetDocumentData("Test", documentId, documentPtr);
+	if (!documentPtr.IsValid()){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
 	}
 
-	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr);
+	imtauth::IContactInfo* contactInfoPtr = dynamic_cast<imtauth::IContactInfo*>(documentPtr.GetPtr());
 	if (contactInfoPtr == nullptr){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
@@ -189,6 +194,8 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 
 		contactInfoPtr->SetEmail(*emailInfo.email);
 	}
+
+	m_documentManagerCompPtr->SetDocumentData("Test", documentId, *contactInfoPtr);
 
 	response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::Success;
 
