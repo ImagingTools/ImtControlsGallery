@@ -7,87 +7,92 @@ import imtcontrols 1.0
 
 
 Rectangle {
-    id: indicatorsRepresentaitonPage;
+	id: indicatorsRepresentaitonPage;
 
-    anchors.fill: parent;
-    clip: true;
+	anchors.fill: parent;
+	clip: true;
 	color: Style.baseColor
 
-    Column{
-        id: column;
+	Column{
+		id: column;
 
-        anchors.centerIn: parent;
+		anchors.centerIn: parent;
 
-        width: parent.width;
-        spacing: 100;
+		width: parent.width;
+		spacing: 100;
 
-        Row{
-            id: progressBarRow;
+		Row{
+			id: progressBarRow;
 
-            anchors.horizontalCenter: parent.horizontalCenter;
+			anchors.horizontalCenter: parent.horizontalCenter;
 
-            height:  100;
-            spacing: 100;
+			height:  100;
+			spacing: 100;
 
-            ProgressBar{
-                id: progressBar1;
+			ProgressBar{
+				id: progressBar1;
 
-                anchors.bottom:  parent.bottom;
+				anchors.bottom:  parent.bottom;
 
-                from: 10; to: 110;
-                value: 40;
-                text: value + " единиц (" + percent + " %)";
-            }
+				from: 10; to: 110;
+				value: 40;
+				text: value + " единиц (" + percent + " %)";
 
-            ProgressBar{
-                id: progressBar2;
+			}
 
-                anchors.bottom:  parent.bottom;
+			ProgressBar{
+				id: progressBar2;
+
+				anchors.bottom:  parent.bottom;
 
 
-                from: 10; to: 110;
-                value: 60;
+				from: 10; to: 110;
+				value: 60;
 				indeterminate: true;
-                text: percent + " %";
-            }
+				text: percent + " %";
 
-            ProgressBar{
-                id: progressBar3;
+			}
 
-                anchors.bottom:  parent.bottom;
+			ProgressBar{
+				id: progressBar3;
 
-                width: 150;
-                from: 10; to: 110;
-                value: 60;
-                hasText: false;
-                hasTitle: false;
-                text: percent + " %";
-            }
+				anchors.bottom:  parent.bottom;
+
+				width: 150;
+				from: 10; to: 110;
+				value: 60;
+				hasText: false;
+				hasTitle: false;
+				text: percent + " %";
+
+			}
 
 
-            ProgressRoundIndicator{
-                id: roundIndicator;
+			ProgressRoundIndicator{
+				id: roundIndicator;
 
-                anchors.bottom:  parent.bottom;
-                width: 70;
-                height: width;
-            }
+				anchors.bottom:  parent.bottom;
+				width: 70;
+				height: width;
 
-            ProgressRoundIndicator{
-                id: roundIndicatorInd;
+			}
 
-                anchors.bottom:  parent.bottom;
-                width: 70;
-                height: width;
-                indeterminate: true;
-                percent: 40;
-                MouseArea{
-                    anchors.fill: parent;
-                    onClicked: {
-                        roundIndicatorInd.indeterminate = !roundIndicatorInd.indeterminate;
-                    }
-                }
-            }
+			ProgressRoundIndicator{
+				id: roundIndicatorInd;
+
+				anchors.bottom:  parent.bottom;
+				width: 70;
+				height: width;
+				indeterminate: true;
+				percent: 40;
+
+				MouseArea{
+					anchors.fill: parent;
+					onClicked: {
+						roundIndicatorInd.indeterminate = !roundIndicatorInd.indeterminate;
+					}
+				}
+			}
 
 			Button{
 				id: showProgressDialogButton;
@@ -123,7 +128,7 @@ Rectangle {
 					isFailed = true;
 				}
 			}
-        }//progressBarRow
+		}//progressBarRow
 
 		Shortcut{
 			id: taskFailedShortCut
@@ -135,193 +140,193 @@ Rectangle {
 			}
 		}
 
-        Row{
-            id: indicatorsRow;
+		Row{
+			id: indicatorsRow;
 
-            anchors.horizontalCenter: parent.horizontalCenter;
+			anchors.horizontalCenter: parent.horizontalCenter;
 
-            height:  100;
-            spacing: 100;
+			height:  100;
+			spacing: 100;
 
-            BusyIndicator{
-                id: busyIndicator;
+			BusyIndicator{
+				id: busyIndicator;
 
-                anchors.verticalCenter: parent.verticalCenter;
+				anchors.verticalCenter: parent.verticalCenter;
 
-                width: parent.height;
-                height: width;
-                visible: true;
-            }
+				width: parent.height;
+				height: width;
+				visible: true;
+			}
 
-            Rectangle{
-                id: forTooltip;
+			Rectangle{
+				id: forTooltip;
 
-                anchors.verticalCenter:  parent.verticalCenter;
+				anchors.verticalCenter:  parent.verticalCenter;
 
-                width: 150;
-                height: 40;
+				width: 150;
+				height: 40;
 
-                radius: 10;
-                color: "lightblue";
-                Text{
-                    anchors.centerIn: parent;
+				radius: 10;
+				color: "lightblue";
+				Text{
+					anchors.centerIn: parent;
 
-                    text: "show tooltip";
-                    font.pixelSize: 18;
-                }
+					text: "show tooltip";
+					font.pixelSize: 18;
+				}
 
-                MouseArea{
-                    anchors.fill: parent;
+				MouseArea{
+					anchors.fill: parent;
 
-                    hoverEnabled: true;
-                    cursorShape: Qt.PointingHandCursor;
+					hoverEnabled: true;
+					cursorShape: Qt.PointingHandCursor;
 
-                    onPositionChanged: {
-                        if(tooltip.text !== ""){
-                            tooltip.show(mouseX, mouseY);
-                        }
-                    }
+					onPositionChanged: {
+						if(tooltip.text !== ""){
+							tooltip.show(mouseX, mouseY);
+						}
+					}
 
-                    onExited: {
-                        if(tooltip.text !== ""){
-                            tooltip.hide();
-                        }
-                    }
-                }
-                CustomTooltip{
-                    id: tooltip;
+					onExited: {
+						if(tooltip.text !== ""){
+							tooltip.hide();
+						}
+					}
+				}
+				CustomTooltip{
+					id: tooltip;
 
-                    text: "Tooltip!!!"
-                    fitToTextWidth: true;
-                    componentHeight: 30;
-                    timeout: 2000;
-                    fitToHCenter: true;
-                }
+					text: "Tooltip!!!"
+					fitToTextWidth: true;
+					componentHeight: 30;
+					timeout: 2000;
+					fitToHCenter: true;
+				}
 
-            }
-
-
-        }//indicatorsRow
-
-        Row{
-            id: scrollBarsRow;
-
-            anchors.horizontalCenter: parent.horizontalCenter;
-
-            height:  300;
-            spacing: 100;
-
-            Rectangle{
-                id: listViewVertContainer;
-
-                width: parent.height;
-                height: width;
-
-                radius: 4;
-                border.color: "lightgreen";
-
-                ListView{
-                    id: listVert;
-
-                    anchors.centerIn: parent;
-
-                    width: parent.width - 8;
-                    height: parent.height - 8;
-
-                    clip: true;
-                    boundsBehavior: Flickable.StopAtBounds;
-                    spacing: 20;
-
-                    model: 10;
+			}
 
 
-                    delegate: Rectangle{
+		}//indicatorsRow
+
+		Row{
+			id: scrollBarsRow;
+
+			anchors.horizontalCenter: parent.horizontalCenter;
+
+			height:  300;
+			spacing: 100;
+
+			Rectangle{
+				id: listViewVertContainer;
+
+				width: parent.height;
+				height: width;
+
+				radius: 4;
+				border.color: "lightgreen";
+
+				ListView{
+					id: listVert;
+
+					anchors.centerIn: parent;
+
+					width: parent.width - 8;
+					height: parent.height - 8;
+
+					clip: true;
+					boundsBehavior: Flickable.StopAtBounds;
+					spacing: 20;
+
+					model: 10;
+
+
+					delegate: Rectangle{
 						width: listVert.width - 10;
-                        height: 50;
-                        radius: 2;
-                        color: "lightblue";
-                        Text{
-                            anchors.centerIn: parent;
+						height: 50;
+						radius: 2;
+						color: "lightblue";
+						Text{
+							anchors.centerIn: parent;
 
-                            font.pixelSize: 18;
-                            text: model.index + 1;
-                        }
-                    }
+							font.pixelSize: 18;
+							text: model.index + 1;
+						}
+					}
 
-                 }//listVert
+				}//listVert
 
-                CustomScrollbar{
-                    id: scrollVert;
+				CustomScrollbar{
+					id: scrollVert;
 
-                    anchors.right: listVert.right;
-                    anchors.rightMargin: 1;
+					anchors.right: listVert.right;
+					anchors.rightMargin: 1;
 
-                    anchors.bottom: listVert.bottom;
+					anchors.bottom: listVert.bottom;
 
-                    secondSize: 8;
+					secondSize: 8;
 
-                    targetItem: listVert;
-                }
+					targetItem: listVert;
+				}
 
-            }//listViewVertContainer
+			}//listViewVertContainer
 
-            Rectangle{
-                id: listViewHorizContainer;
+			Rectangle{
+				id: listViewHorizContainer;
 
-                width: parent.height;
-                height: width;
+				width: parent.height;
+				height: width;
 
-                radius: 4;
-                border.color: "lightgreen";
+				radius: 4;
+				border.color: "lightgreen";
 
-                ListView{
-                    id: listHoriz;
+				ListView{
+					id: listHoriz;
 
-                    anchors.centerIn: parent;
+					anchors.centerIn: parent;
 
-                    width: parent.width - 8;
-                    height: parent.height - 8;
+					width: parent.width - 8;
+					height: parent.height - 8;
 
-                    clip: true;
-                    boundsBehavior: Flickable.StopAtBounds;
-                    orientation: Qt.Horizontal;
-                    spacing: 20;
+					clip: true;
+					boundsBehavior: Flickable.StopAtBounds;
+					orientation: Qt.Horizontal;
+					spacing: 20;
 
-                    model: 10;
-                    delegate: Rectangle{
-                        width: 50;
+					model: 10;
+					delegate: Rectangle{
+						width: 50;
 						height: listHoriz.height - 10;
-                        radius: 2;
-                        color: "lightblue";
-                        Text{
-                            anchors.centerIn: parent;
+						radius: 2;
+						color: "lightblue";
+						Text{
+							anchors.centerIn: parent;
 
-                            font.pixelSize: 18;
-                            text: model.index + 1;
-                        }
-                    }
+							font.pixelSize: 18;
+							text: model.index + 1;
+						}
+					}
 
-                }
+				}
 
-                CustomScrollbar{
-                    id: scrollHoriz;
+				CustomScrollbar{
+					id: scrollHoriz;
 
-                    anchors.right: listHoriz.right;
-                    anchors.bottom: listHoriz.bottom;
-                    anchors.bottomMargin: 1;
+					anchors.right: listHoriz.right;
+					anchors.bottom: listHoriz.bottom;
+					anchors.bottomMargin: 1;
 
-                    secondSize: 8;
+					secondSize: 8;
 
-                    vertical: false;
-                    targetItem: listHoriz;
-                }
+					vertical: false;
+					targetItem: listHoriz;
+				}
 
-            }//listViewHorizContainer
-        }//scrollBarsRow
+			}//listViewHorizContainer
+		}//scrollBarsRow
 
-    }//Column
+	}//Column
 
-    Timer{
+	Timer{
 		id: timer;
 
 		running: true;
@@ -331,17 +336,17 @@ Rectangle {
 		}
 		interval: 4000;
 		repeat: true;
-    }
+	}
 
 
-    NumberAnimation {
-        id: roundIndicatorAnim;
+	NumberAnimation {
+		id: roundIndicatorAnim;
 
-        target: roundIndicator;
-        property: "percent";
-        duration: 3000;
-        from: 0; to: 100;
-    }
+		target: roundIndicator;
+		property: "percent";
+		duration: 3000;
+		from: 0; to: 100;
+	}
 
 	NumberAnimation {
 		id: progressDialogAnim;
@@ -370,7 +375,7 @@ Rectangle {
 				}
 			}
 
-			onTaskComleted: {
+			onTaskCompleted: {
 				let text_ = description + " "  + qsTr("completed")
 				let param = {"text": text_}
 				ModalDialogManager.openDialog(messageComp, param)
