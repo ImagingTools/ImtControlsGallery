@@ -2,8 +2,8 @@
 <Acf>
     <AcfHeader>
         <VersionInfos>
-            <Version Id="0" Number="5423" Description="ACF"/>
-            <Version Id="1" Number="2252" Description="ACF-Solutions"/>
+            <Version Id="0" Number="5437" Description="ACF"/>
+            <Version Id="1" Number="2255" Description="ACF-Solutions"/>
             <Version Id="1023" Number="395264" Description="Qt Framework"/>
         </VersionInfos>
     </AcfHeader>
@@ -256,6 +256,33 @@
                 </AttributeInfoMap>
             </Data>
         </Element>
+        <Element Id="SdlTestPage" PackageId="ImtCoreVoce" ComponentId="SingleDocPage">
+            <Data IsEnabled="true" Flags="0">
+                <AttributeInfoMap>
+                    <AttributeInfo Id="FixedItemQmlPath" Type="Text" ExportId="">
+                        <Data IsEnabled="true" Value="../../SdlTestPage.qml"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="IconPath" Type="Text" ExportId="">
+                        <Data IsEnabled="true" Value="Icons/Product"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
+                        <Data IsEnabled="false"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="Name" Type="Text" ExportId="">
+                        <Data IsEnabled="true" Value="SdlTest"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="PageId" Type="Id" ExportId="">
+                        <Data IsEnabled="true" Value="SdlTest"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="TracingConfiguration" Type="Reference" ExportId="TracingConfiguration">
+                        <Data IsEnabled="false"/>
+                    </AttributeInfo>
+                    <AttributeInfo Id="TranslationManager" Type="Reference" ExportId="TranslationManager">
+                        <Data IsEnabled="false"/>
+                    </AttributeInfo>
+                </AttributeInfoMap>
+            </Data>
+        </Element>
         <Element Id="TablePage" PackageId="ImtCoreVoce" ComponentId="SingleDocPage">
             <Data IsEnabled="true" Flags="0">
                 <AttributeInfoMap>
@@ -405,6 +432,7 @@
         <Component ExportedId="IndicatorsPage" ComponentId="IndicatorsPage"/>
         <Component ExportedId="InputsPage" ComponentId="InputsPage"/>
         <Component ExportedId="ProductRepository" ComponentId="Repositories/ProductRepository"/>
+        <Component ExportedId="SdlTestPage" ComponentId="SdlTestPage"/>
         <Component ExportedId="TablePage" ComponentId="TablePage"/>
         <Component ExportedId="TableTreeViewPage" ComponentId="TableTreeViewPage"/>
         <Component ExportedId="TestPage" ComponentId="TestPage"/>

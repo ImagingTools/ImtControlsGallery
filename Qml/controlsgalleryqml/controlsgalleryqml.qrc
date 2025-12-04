@@ -11,6 +11,7 @@
         <file alias="IndicatorsRepresentaitonPage.qml">IndicatorsRepresentaitonPage.qml</file>
         <file alias="DialogsRepresentaitonPage.qml">DialogsRepresentaitonPage.qml</file>
         <file alias="TestPage.qml">TestPage.qml</file>
+        <file alias="SdlTestPage.qml">SdlTestPage.qml</file>
         <file alias="CanvasPage.qml">CanvasPage.qml</file>
 	<file alias="GraphicsViewPage.qml">GraphicsViewPage.qml</file>
 	<file alias="GrVTestPage.qml">GrVTestPage.qml</file>
