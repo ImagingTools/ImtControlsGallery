@@ -15,7 +15,6 @@ sdl::imtbase::ImtBaseTypes::CParamsSet CParamsSetTestControllerComp::OnGetParams
 	QString& errorMessage) const
 {
 	sdl::imtbase::ImtBaseTypes::CParamsSet retVal;
-	retVal.Version_1_0.emplace();
 
 	// Text parameter
 	sdl::imtbase::ImtBaseTypes::CTextParam strParam;
@@ -23,8 +22,11 @@ sdl::imtbase::ImtBaseTypes::CParamsSet CParamsSetTestControllerComp::OnGetParams
 
 	QJsonObject jsonObject;
 	if (!strParam.WriteToJsonObject(jsonObject, strParam.PV_1_0)){
-		false;
+		return retVal;
 	}
+
+	retVal.Version_1_0.emplace();
+
 	QJsonDocument jsonDocument;
 	jsonDocument.setObject(jsonObject);
 
@@ -39,7 +41,7 @@ sdl::imtbase::ImtBaseTypes::CParamsSet CParamsSetTestControllerComp::OnGetParams
 
 	retVal.Version_1_0->parameters.emplace().append(parameter);
 
-	return sdl::imtbase::ImtBaseTypes::CParamsSet();
+	return retVal;
 }
 
 
