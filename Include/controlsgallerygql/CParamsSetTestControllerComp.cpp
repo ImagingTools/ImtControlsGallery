@@ -50,7 +50,13 @@ sdl::controlsgallery::ParamsSetTest::CSetParamsSetResult CParamsSetTestControlle
 	const::imtgql::CGqlRequest& gqlRequest,
 	QString& errorMessage) const
 {
+
 	sdl::controlsgallery::ParamsSetTest::CSetParamsSetResult retVal;
+
+	retVal.Version_1_0.emplace().result = true;
+
+	return retVal;
+
 
 	auto paramsSet = setParamsSetRequest.GetRequestedArguments().input;
 
