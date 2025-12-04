@@ -29,6 +29,11 @@ I_EXPORT_COMPONENT(
 		"Contact info collection document manager",
 		"Contact Info Collection Document Manager");
 
+I_EXPORT_COMPONENT(
+		ParamsSetTestController,
+		"Params set test controller",
+		"ParamsSet Test Controller");
+
 
 } // namespace ControlsGalleryGqlPck
 
