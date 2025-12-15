@@ -34,8 +34,8 @@ Rectangle {
 		onClicked: {
 			graph2d.legendX = "Test"
 			graph2d.legendY = "Test"
-			graph2d.labelXValues = ["2023", "2024", "2025"]
-			graph2d.linePoints = [Qt.point(0, 81), Qt.point(1, 371), Qt.point(2, 420)]
+			graph2d.labelXValues = ["2025"]
+			graph2d.linePoints = [Qt.point(0, 0)]
 			graph2d.requestPaint()
 		}
 	}
