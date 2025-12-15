@@ -33,7 +33,7 @@ sdl::controlsgallery::ContactInfos::CContactInfoData CContactInfoCollectionDocum
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
 
-		m_documentManagerCompPtr->GetDocumentData("Test", objectId, documentPtr);
+		m_documentManagerCompPtr->GetDocumentData("", objectId, documentPtr);
 	}
 
 	if (!documentPtr.IsValid()){
@@ -82,7 +82,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 	}
 
 	istd::IChangeableSharedPtr documentPtr;
-	m_documentManagerCompPtr->GetDocumentData("Test", documentId, documentPtr);
+	m_documentManagerCompPtr->GetDocumentData("", documentId, documentPtr);
 	if (!documentPtr.IsValid()){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
@@ -108,7 +108,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		contactInfoPtr->SetEmail(*contactInfo.email);
 	}
 
-	m_documentManagerCompPtr->SetDocumentData("Test", documentId, *contactInfoPtr);
+	m_documentManagerCompPtr->SetDocumentData("", documentId, *contactInfoPtr);
 
 	response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::Success;
 
@@ -132,7 +132,7 @@ sdl::controlsgallery::ContactInfoCollectionDocumentManager::CEmailData CContactI
 	istd::IChangeableSharedPtr documentPtr;
 	if (arguments.input.Version_1_0->id){
 		objectId = *arguments.input.Version_1_0->id;
-		m_documentManagerCompPtr->GetDocumentData("Test", objectId, documentPtr);
+		m_documentManagerCompPtr->GetDocumentData("", objectId, documentPtr);
 	}
 
 	if (!documentPtr.IsValid()){
@@ -177,7 +177,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 	}
 
 	istd::IChangeableSharedPtr documentPtr;
-	m_documentManagerCompPtr->GetDocumentData("Test", documentId, documentPtr);
+	m_documentManagerCompPtr->GetDocumentData("", documentId, documentPtr);
 	if (!documentPtr.IsValid()){
 		response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::InvalidDocumentId;
 		return response;
@@ -195,7 +195,7 @@ sdl::imtbase::CollectionDocumentManager::CDocumentOperationStatus CContactInfoCo
 		contactInfoPtr->SetEmail(*emailInfo.email);
 	}
 
-	m_documentManagerCompPtr->SetDocumentData("Test", documentId, *contactInfoPtr);
+	m_documentManagerCompPtr->SetDocumentData("", documentId, *contactInfoPtr);
 
 	response.Version_1_0->status = sdl::imtbase::CollectionDocumentManager::EDocumentOperationStatus::Success;
 

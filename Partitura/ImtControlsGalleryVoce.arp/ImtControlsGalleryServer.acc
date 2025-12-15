@@ -2,8 +2,8 @@
 <Acf>
     <AcfHeader>
         <VersionInfos>
-            <Version Id="0" Number="5405" Description="ACF"/>
-            <Version Id="1" Number="2250" Description="ACF-Solutions"/>
+            <Version Id="0" Number="5446" Description="ACF"/>
+            <Version Id="1" Number="2256" Description="ACF-Solutions"/>
             <Version Id="1023" Number="395267" Description="Qt Framework"/>
         </VersionInfos>
     </AcfHeader>
@@ -256,7 +256,7 @@
         <EmbeddedRegistry Id="ContactInfoDocCollectionManager">
             <Data Description="" Keywords="">
                 <ElementsList>
-                    <Element Id="CollectionDocumentManager" PackageId="ImtServerGqlPck" ComponentId="CollectionDocumentManager">
+                    <Element Id="CollectionDocumentManager" PackageId="ImtDocPck" ComponentId="CollectionDocumentManager">
                         <Data IsEnabled="true" Flags="0">
                             <AttributeInfoMap>
                                 <AttributeInfo Id="Collection" Type="Reference" ExportId="ContactInfoCollection">
@@ -268,31 +268,40 @@
                                 <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
                                     <Data IsEnabled="false"/>
                                 </AttributeInfo>
-                                <AttributeInfo Id="ObjectFactory" Type="Factory[]" ExportId="">
+                                <AttributeInfo Id="ObjectFactories" Type="Factory[]" ExportId="">
                                     <Data IsEnabled="true">
                                         <Values>
                                             <Value>ContactInfo</Value>
                                         </Values>
                                     </Data>
                                 </AttributeInfo>
-                                <AttributeInfo Id="ObjectTypeId" Type="Id[]" ExportId="">
+                                <AttributeInfo Id="ObjectTypeIdList" Type="Id[]" ExportId="">
                                     <Data IsEnabled="true">
                                         <Values>
                                             <Value>ContactInfo</Value>
                                         </Values>
                                     </Data>
-                                </AttributeInfo>
-                                <AttributeInfo Id="PermissionChecker" Type="Reference" ExportId="PermissionChecker">
-                                    <Data IsEnabled="false"/>
                                 </AttributeInfo>
                                 <AttributeInfo Id="TracingConfiguration" Type="Reference" ExportId="TracingConfiguration">
                                     <Data IsEnabled="false"/>
                                 </AttributeInfo>
-                                <AttributeInfo Id="TranslationManager" Type="Reference" ExportId="TranslationManager">
-                                    <Data IsEnabled="false"/>
-                                </AttributeInfo>
                                 <AttributeInfo Id="UndoManager" Type="Factory" ExportId="">
                                     <Data IsEnabled="true" Value="SerializedUndoManager"/>
+                                </AttributeInfo>
+                            </AttributeInfoMap>
+                        </Data>
+                    </Element>
+                    <Element Id="CollectionDocumentManagerController" PackageId="ImtServerGqlPck" ComponentId="CollectionDocumentManagerController">
+                        <Data IsEnabled="true" Flags="0">
+                            <AttributeInfoMap>
+                                <AttributeInfo Id="CollectionDocumentManager" Type="Reference" ExportId="">
+                                    <Data IsEnabled="true" Value="CollectionDocumentManager"/>
+                                </AttributeInfo>
+                                <AttributeInfo Id="CollectionId" Type="Id" ExportId="">
+                                    <Data IsEnabled="true" Value="ContactInfos"/>
+                                </AttributeInfo>
+                                <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
+                                    <Data IsEnabled="false"/>
                                 </AttributeInfo>
                             </AttributeInfoMap>
                         </Data>
@@ -332,7 +341,7 @@
                 <EmbeddedRegistriesList/>
                 <ExportedInterfaces>
                     <Interface InterfaceId="imtdoc::IDocumentManager" ComponentId="CollectionDocumentManager"/>
-                    <Interface InterfaceId="imtgql::IGqlRequestHandler" ComponentId="CollectionDocumentManager"/>
+                    <Interface InterfaceId="imtgql::IGqlRequestHandler" ComponentId="CollectionDocumentManagerController"/>
                     <Interface InterfaceId="imtgql::IGqlSubscriberController" ComponentId="CollectionDocumentManagerPublisher"/>
                 </ExportedInterfaces>
                 <ExportedComponents/>
