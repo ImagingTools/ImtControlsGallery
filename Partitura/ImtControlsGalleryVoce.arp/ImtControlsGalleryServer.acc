@@ -262,8 +262,12 @@
                                 <AttributeInfo Id="Collection" Type="Reference" ExportId="ContactInfoCollection">
                                     <Data IsEnabled="false"/>
                                 </AttributeInfo>
-                                <AttributeInfo Id="CollectionId" Type="Id" ExportId="">
-                                    <Data IsEnabled="true" Value="ContactInfos"/>
+                                <AttributeInfo Id="DocumentManagerEventHandler" Type="Reference[]" ExportId="">
+                                    <Data IsEnabled="true">
+                                        <Values>
+                                            <Value>CollectionDocumentManagerPublisher</Value>
+                                        </Values>
+                                    </Data>
                                 </AttributeInfo>
                                 <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
                                     <Data IsEnabled="false"/>
@@ -311,9 +315,6 @@
                             <AttributeInfoMap>
                                 <AttributeInfo Id="CollectionId" Type="Id" ExportId="">
                                     <Data IsEnabled="true" Value="ContactInfos"/>
-                                </AttributeInfo>
-                                <AttributeInfo Id="DefaultModel" Type="Reference" ExportId="">
-                                    <Data IsEnabled="true" Value="CollectionDocumentManager"/>
                                 </AttributeInfo>
                                 <AttributeInfo Id="Log" Type="Reference" ExportId="Log">
                                     <Data IsEnabled="false"/>
