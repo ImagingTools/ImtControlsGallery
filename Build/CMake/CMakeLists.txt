@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.26)
+
 project(ImtControlsGallery LANGUAGES CXX)
 
 set(ARXC_CONFIG "${PROJECT_SOURCE_DIR}/../../../Config/ImtCore.awc")
@@ -6,6 +8,14 @@ set(ARXC_OUTDIR "${AUX_INCLUDE_DIR}")
 
 if(NOT DEFINED WEB_COMPILE)
 	set(WEB_COMPILE ON CACHE BOOL "Build whith web compatibility")
+endif()
+
+if(NOT DEFINED QT_VERSION_MAJOR)
+	find_package(QT NAMES Qt6 Qt5 COMPONENTS Core)
+	find_package("Qt${QT_VERSION_MAJOR}" COMPONENTS Core Widgets QuickWidgets Core Gui Xml Network Svg Sql WebSockets Qml Concurrent QuickControls2 REQUIRED)
+	if(QT_VERSION_MAJOR EQUAL 6)
+		find_package("Qt${QT_VERSION_MAJOR}" COMPONENTS Core5Compat REQUIRED)
+	endif()
 endif()
 
 if(NOT DEFINED BUILDDIR)
@@ -49,5 +59,4 @@ add_dependencies(controlsgalleryqml controlsgallerysdl)
 
 # Sdl
 add_subdirectory("../../Sdl/controlsgallery/CMake" "${AUX_INCLUDE_DIR}/controlsgallerysdl")
-add_dependencies(controlsgallerysdl imtbasesdl)
 

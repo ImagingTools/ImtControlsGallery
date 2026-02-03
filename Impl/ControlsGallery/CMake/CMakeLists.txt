@@ -28,7 +28,7 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} ImtCoreLoc AcfLoc AcfSlnLoc)
 target_link_libraries(${PROJECT_NAME} controlsgallerysdl controlsgallerygql controlsgalleryqml)
-target_link_libraries(${PROJECT_NAME} imtappsdl imtauthsdl imtlicsdl imtcolorsdl)
+target_link_libraries(${PROJECT_NAME} imtappsdl imtauthsdl imtlicsdl imtcolorsdl imt2dsdl)
 target_link_libraries(${PROJECT_NAME} imtmail imtgui imtauth imtauthgui imtlicdb imtlic imtlicgui imtwidgets imtzip imt3dgui imtrepo imtstyle imtqml imtdb imtfile)
 target_link_libraries(${PROJECT_NAME} imtlicgql imtguigql imtclientgql imtgql imtauthgql imtauthdb imtcom imtservice imtlog imtservergql imtcol)
 target_link_libraries(${PROJECT_NAME} imtcontrolsqml imtstylecontrolsqml imtguiqml imtcolguiqml imtdocguiqml imtguigqlqml imtauthguiqml imtlicguiqml)
