@@ -35,7 +35,7 @@ Rectangle {
 
 		Button{
 			id: longButton;
-
+			objectName: "LongButton"
 			anchors.verticalCenter:  parent.verticalCenter;
 
 			width: 300
@@ -51,7 +51,7 @@ Rectangle {
 		}
 		Button{
 			id: textButton;
-
+			objectName: "TextButton"
 			anchors.verticalCenter:  parent.verticalCenter;
 
 			KeyNavigation.right: roundButton
@@ -66,7 +66,7 @@ Rectangle {
 
 		MenuButton{
 			id: menuButton;
-
+			objectName: "MenuButton"
 			anchors.verticalCenter:  parent.verticalCenter;
 
 			KeyNavigation.right: roundButton
@@ -112,7 +112,7 @@ Rectangle {
 
 		Button{
 			id: roundButton;
-
+			objectName: "RoundButton"
 			anchors.verticalCenter:  parent.verticalCenter;
 
 			KeyNavigation.right: iconButton
