@@ -49,7 +49,7 @@ Rectangle {
 
             TextField{
                 id: textField;
-
+                objectName: "TextField"
                 anchors.verticalCenter: parent.verticalCenter;
 
                 placeHolderText: "TextField";
@@ -107,7 +107,7 @@ Rectangle {
 
             ComboBox{
                 id: combobox;
-
+                objectName: "ComboBox"
                 anchors.verticalCenter: parent.verticalCenter;
 
                 model: comboModel;
