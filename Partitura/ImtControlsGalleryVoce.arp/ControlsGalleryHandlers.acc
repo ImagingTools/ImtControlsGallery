@@ -2,8 +2,8 @@
 <Acf>
     <AcfHeader>
         <VersionInfos>
-            <Version Id="0" Number="5405" Description="ACF"/>
-            <Version Id="1" Number="2250" Description="ACF-Solutions"/>
+            <Version Id="0" Number="6285" Description="ACF"/>
+            <Version Id="1" Number="2288" Description="ACF-Solutions"/>
             <Version Id="1023" Number="395267" Description="Qt Framework"/>
         </VersionInfos>
     </AcfHeader>
@@ -55,6 +55,7 @@
                                 <Value>Pages/GridViewPage</Value>
                                 <Value>Pages/TestPage</Value>
                                 <Value>Pages/SdlTestPage</Value>
+                                <Value>Pages/StateTestPage</Value>
                             </Values>
                         </Data>
                     </AttributeInfo>
